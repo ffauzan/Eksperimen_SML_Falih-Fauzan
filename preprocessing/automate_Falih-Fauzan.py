@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 
 # Load the dataset
-df = pd.read_csv('./../crop_data_raw.csv')
+df = pd.read_csv('crop_data_raw.csv')
 
 # Preprocess
 y = df['label']
