@@ -15,4 +15,3 @@ df_cleaned['label_encoded'] = y_encoded
 
 # Save the cleaned DF to a new CSV file
 df_cleaned.to_csv('crop_data_cleaned.csv', index=False)
-
