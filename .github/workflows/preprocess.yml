@@ -20,15 +20,18 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: |
           pip install pandas scikit-learn
 
-      - name: Run preprocessing script
+      - name: Run Preprocessing Script
         run: python preprocessing/automate_Falih-Fauzan.py
 
-      - name: Upload cleaned data as artifact
-        uses: actions/upload-artifact@v4
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
         with:
-          name: crop_data_cleaned
-          path: preprocessing/crop_data_cleaned.csv
+          tag_name: cleaned_data
+          name: Crop Data Cleaned Release
+          files: preprocessing/crop_data_cleaned.csv
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
