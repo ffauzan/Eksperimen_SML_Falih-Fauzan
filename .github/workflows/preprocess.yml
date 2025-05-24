@@ -6,6 +6,7 @@ on:
     paths:
       - 'preprocessing/automate_Falih-Fauzan.py'
       - 'crop_data_raw.csv'
+      - '.github/workflows/preprocess.yml'
 
 jobs:
   preprocess:
