@@ -27,10 +27,13 @@ jobs:
       - name: Run Preprocessing Script
         run: python preprocessing/automate_Falih-Fauzan.py
 
+      - name: Set Short SHA
+        run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
+
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: cleaned_data
+          tag_name: cleaned_data_${{ env.SHORT_SHA }}
           name: Crop Data Cleaned Release
           files: preprocessing/crop_data_cleaned.csv
         env:
